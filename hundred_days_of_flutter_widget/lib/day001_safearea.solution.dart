@@ -17,7 +17,7 @@ class Day1SafeArea extends StatelessWidget {
         bottom: true,
         left: true,
         right: true,
-        maintainBottomViewPadding: true, // Bật tính năng duy trì khoảng trống dưới
+        maintainBottomViewPadding: true,
         minimum: EdgeInsets.all(16),
         child: Column(
           children: [
@@ -26,7 +26,7 @@ class Day1SafeArea extends StatelessWidget {
                 color: Colors.deepPurple,
                 child: const Center(
                   child: Text(
-                    'Nhập văn bản vào ô bên dưới',
+                    'Nhập vào ô bên dưới',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ),
@@ -36,7 +36,7 @@ class Day1SafeArea extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: 'Nhập văn bản',
+                  labelText: 'Nhập',
                   border: OutlineInputBorder(),
                 ),
               ),
