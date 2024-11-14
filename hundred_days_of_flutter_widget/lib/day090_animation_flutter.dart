@@ -16,14 +16,14 @@ enum Answers {
 }
 
 class Day90AnimationFlutter extends StatefulWidget {
-  Day90AnimationFlutter({Key key}) : super(key: key);
+  Day90AnimationFlutter({key}) : super(key: key);
 
   @override
   _Day90AnimationFlutterState createState() => _Day90AnimationFlutterState();
 }
 
 class _Day90AnimationFlutterState extends State<Day90AnimationFlutter> {
-  String currentQuestion;
+  late String currentQuestion;
   List<String> questions = [
     'Is my animation is more like a Drawing?',
     'Is my animation is difficult to express in code? Do I want to draw visually?',
@@ -107,8 +107,10 @@ class _Day90AnimationFlutterState extends State<Day90AnimationFlutter> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    RaisedButton(
-                      color: Colors.deepPurple,
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        textStyle: TextStyle(color: Colors.deepPurple),
+                      ),
                       child: Text(
                         "No",
                         style: TextStyle(color: Colors.white),
@@ -140,8 +142,10 @@ class _Day90AnimationFlutterState extends State<Day90AnimationFlutter> {
                         });
                       },
                     ),
-                    RaisedButton(
-                      color: Colors.deepPurple,
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        textStyle: TextStyle(color: Colors.deepPurple),
+                      ),
                       child: Text(
                         "Yes",
                         style: TextStyle(color: Colors.white),
@@ -185,8 +189,10 @@ class _Day90AnimationFlutterState extends State<Day90AnimationFlutter> {
                 padding: const EdgeInsets.all(8.0),
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: RaisedButton(
-                    color: Colors.deepOrange,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        textStyle: TextStyle(color: Colors.deepOrange),
+                      ),
                     child: Text(
                       "Reset",
                       style: TextStyle(color: Colors.white),

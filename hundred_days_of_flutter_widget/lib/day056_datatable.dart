@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day56DataTable extends StatefulWidget {
-  Day56DataTable({Key key}) : super(key: key);
+  Day56DataTable({ key}) : super(key: key);
 
   @override
   _Day56DataTableState createState() => _Day56DataTableState();

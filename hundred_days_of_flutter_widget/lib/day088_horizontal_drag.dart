@@ -7,11 +7,11 @@ class Day88HorizontalDrag extends StatefulWidget {
 }
 
 class _Day88HorizontalDragState extends State<Day88HorizontalDrag> {
-  Offset _offset;
+  late Offset _offset;
 
-  String onHorizontalDragText;
+  late String onHorizontalDragText;
 
-  String isDragLeftOrRight;
+  late String isDragLeftOrRight;
 
   @override
   void initState() {

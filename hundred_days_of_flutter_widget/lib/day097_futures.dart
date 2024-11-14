@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day97Futures extends StatefulWidget {
-  Day97Futures({Key key}) : super(key: key);
+  Day97Futures({ key}) : super(key: key);
 
   @override
   _Day97FuturesState createState() => _Day97FuturesState();
 }
 
 class _Day97FuturesState extends State<Day97Futures> {
-  Future<String> _data;
+  late Future<String> _data;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,17 +18,17 @@ class _Day97FuturesState extends State<Day97Futures> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              FutureBuilder(
+              FutureBuilder<String>(
                 future: _data,
                 initialData: "Click The Buttons Below",
                 builder: (context, snapshot) => Text(
                   snapshot.connectionState.toString() +
                       '\n Data ' +
-                      snapshot.data,
+                      snapshot.data!,
                   textAlign: TextAlign.center,
                 ),
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Call Future Constructor'),
                 onPressed: () {
                   setState(() {
@@ -39,7 +39,7 @@ class _Day97FuturesState extends State<Day97Futures> {
                   });
                 },
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Call Future.value'),
                 onPressed: () {
                   setState(() {
@@ -47,7 +47,7 @@ class _Day97FuturesState extends State<Day97Futures> {
                   });
                 },
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Call Future.delayed'),
                 onPressed: () {
                   setState(() {
@@ -57,7 +57,7 @@ class _Day97FuturesState extends State<Day97Futures> {
                 },
               ),
               Builder(
-                builder: (context) => RaisedButton(
+                builder: (context) => ElevatedButton(
                   child: Text('Call Future.delayed with success callback'),
                   onPressed: () {
                     setState(() {
@@ -72,7 +72,7 @@ class _Day97FuturesState extends State<Day97Futures> {
                 ),
               ),
               Builder(
-                builder: (context) => RaisedButton(
+                builder: (context) => ElevatedButton(
                   child: Text('Call Future.delayed with error callback'),
                   onPressed: () {
                     setState(() {
@@ -80,7 +80,7 @@ class _Day97FuturesState extends State<Day97Futures> {
                         throw "Call Future.delayed with error callback";
                       }).then((value) {
                         Scaffold.of(context)
-                            .showSnackBar(SnackBar(content: Text(value)));
+                            .showSnackBar(SnackBar(content: Text(value.toString())));
                       }).catchError((onError) {
                         Scaffold.of(context)
                             .showSnackBar(SnackBar(content: Text(onError)));
@@ -90,7 +90,7 @@ class _Day97FuturesState extends State<Day97Futures> {
                 ),
               ),
               Builder(
-                builder: (context) => RaisedButton(
+                builder: (context) => ElevatedButton(
                   child: Text(
                       'Call Future.delayed with error callback and when Complete'),
                   onPressed: () {
@@ -99,7 +99,7 @@ class _Day97FuturesState extends State<Day97Futures> {
                         throw "Call Future.delayed with error callback";
                       }).then((value) {
                         Scaffold.of(context)
-                            .showSnackBar(SnackBar(content: Text(value)));
+                            .showSnackBar(SnackBar(content: Text(value.toString())));
                       }).catchError((onError) {
                         Scaffold.of(context)
                             .showSnackBar(SnackBar(content: Text(onError)));
@@ -136,4 +136,8 @@ class _Day97FuturesState extends State<Day97Futures> {
       ),
     );
   }
+}
+
+extension on ScaffoldState {
+  void showSnackBar(SnackBar snackBar) {}
 }

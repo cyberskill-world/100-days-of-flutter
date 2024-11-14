@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day68SnackBar extends StatefulWidget {
-  Day68SnackBar({Key key}) : super(key: key);
+  Day68SnackBar({ key}) : super(key: key);
 
   @override
   _Day68SnackBarState createState() => _Day68SnackBarState();
@@ -19,14 +19,14 @@ class _Day68SnackBarState extends State<Day68SnackBar> {
       backgroundColor: _bgColor,
       key: _scaffoldKey,
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text("show SnackBar!"),
           /**
            * ? What is SnackBar....
            * ! SnackBar is the simple popup widget in flutter.....
            * ! we can acll the snackbar from the scafold....
            */
-          onPressed: () => _scaffoldKey.currentState.showSnackBar(
+          onPressed: () => _scaffoldKey.currentState?.showSnackBar(
             // * here we call the SnackBar....
             SnackBar(
               // ! here comes the SnackBar....
@@ -82,4 +82,8 @@ class _Day68SnackBarState extends State<Day68SnackBar> {
       ),
     );
   }
+}
+
+extension on ScaffoldState? {
+  showSnackBar(SnackBar snackBar) {}
 }

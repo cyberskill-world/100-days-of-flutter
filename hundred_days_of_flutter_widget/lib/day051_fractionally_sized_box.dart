@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BodyPage extends StatelessWidget {
-  const BodyPage({Key key}) : super(key: key);
+  const BodyPage({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class BodyPage extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: 0.7, // ! we can specify the width factor here....
         heightFactor: 0.5, // ! we can specify the height factor here....
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             // show toast message....
             Scaffold.of(context).showSnackBar(SnackBar(
@@ -32,8 +32,12 @@ class BodyPage extends StatelessWidget {
   }
 }
 
+extension on ScaffoldState {
+  void showSnackBar(SnackBar snackBar) {}
+}
+
 class Day51FractionallySizedBox extends StatelessWidget {
-  const Day51FractionallySizedBox({Key key}) : super(key: key);
+  const Day51FractionallySizedBox({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

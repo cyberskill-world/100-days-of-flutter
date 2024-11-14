@@ -6,15 +6,15 @@ class InheritedColorWidget extends StatefulWidget {
 
   /// ! and going to be the Top|Root of Widget tree....
 
-  InheritedColorWidget({Key key, this.child}) : super(key: key);
+  InheritedColorWidget({ key,required this.child}) : super(key: key);
 
   final Widget child; // ? All the child are comes in the child....
 
   @override
   InheritedColorWidgetState createState() => InheritedColorWidgetState();
 
-  static InheritedColorWidgetState of(BuildContext context) =>
-      (context.dependOnInheritedWidgetOfExactType<InheritedColorData>()).data;
+  static InheritedColorWidgetState? of(BuildContext context) =>
+      (context.dependOnInheritedWidgetOfExactType<InheritedColorData>())?.data;
   /**
    * ! [of] is used to get the Instance of the [InheritedColorData] for the help of [InheritedColorWidget]....
    */
@@ -54,7 +54,7 @@ class InheritedColorData extends InheritedWidget {
 
   /// ! Actually InheritedWidget not the normal UI Widget it have simple save and share the data....
 
-  InheritedColorData({Key key, @required Widget child, @required this.data})
+  InheritedColorData({ key, required Widget child, required this.data})
       : super(key: key, child: child);
 
   final InheritedColorWidgetState
@@ -67,7 +67,7 @@ class InheritedColorData extends InheritedWidget {
 }
 
 class Day15InheritedWidget extends StatefulWidget {
-  Day15InheritedWidget({Key key}) : super(key: key);
+  Day15InheritedWidget({ key}) : super(key: key);
 
   @override
   _Day15InheritedWidgetState createState() => _Day15InheritedWidgetState();
@@ -109,22 +109,22 @@ class _Day15InheritedWidgetState extends State<Day15InheritedWidget> {
 
 class NewChildWidget extends StatelessWidget {
   // ! NewChild....
-  const NewChildWidget({Key key}) : super(key: key);
+  const NewChildWidget({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final InheritedColorWidgetState state = InheritedColorWidget.of(
+    final InheritedColorWidgetState? state = InheritedColorWidget.of(
         context); // ! here we use the [of] function from the InheritedColorWidget to get the InheritedColorData....
     return GestureDetector(
       onTap: () {
         state
-            .changeColor(); // ! on tap the InheritedColorWidgetState.changeColor() will call....
+            ?.changeColor(); // ! on tap the InheritedColorWidgetState.changeColor() will call....
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         color: state
-            .color, // ! the set state of the InheritedColorWidgetState will change the state of NewChildWidget too....
+            ?.color, // ! the set state of the InheritedColorWidgetState will change the state of NewChildWidget too....
       ),
     );
   }

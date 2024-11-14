@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day82AboutDialog extends StatefulWidget {
-  Day82AboutDialog({Key key}) : super(key: key);
+  Day82AboutDialog({ key}) : super(key: key);
 
   @override
   _Day82AboutDialogState createState() => _Day82AboutDialogState();
@@ -13,7 +13,7 @@ class _Day82AboutDialogState extends State<Day82AboutDialog> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [

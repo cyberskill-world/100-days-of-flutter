@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day44AnimatedPositioned extends StatefulWidget {
-  Day44AnimatedPositioned({Key key}) : super(key: key);
+  Day44AnimatedPositioned({key}) : super(key: key);
 
   @override
   _Day44AnimatedPositionedState createState() =>

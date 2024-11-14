@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day49Stack extends StatelessWidget {
-  const Day49Stack({Key key}) : super(key: key);
+  const Day49Stack({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,10 @@ class Day49Stack extends StatelessWidget {
          * ! With the help of Stack, Tranform, AnimationBuilder we can perform awesome....
          */
         child: Stack(
-          fit: StackFit
+          clipBehavior: Clip.none, fit: StackFit
               .loose, // ! we can give loose(default), expand(fill), passthrough(overlap)....
           alignment: Alignment
-              .center, // ! we can give all the alignment here - to modify the root alignment of the child....
-          overflow: Overflow.visible, // ! we can give clip, visible....
+              .center, // ! we can give clip, visible....
           children: <Widget>[
             // ! here we add the list of child widgets....
             Container(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day73ClipPath extends StatelessWidget {
-  const Day73ClipPath({Key key}) : super(key: key);
+  const Day73ClipPath({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day84DatePicker extends StatefulWidget {
-  Day84DatePicker({Key key}) : super(key: key);
+  Day84DatePicker({ key}) : super(key: key);
 
   @override
   _Day84DatePickerState createState() => _Day84DatePickerState();
@@ -21,7 +21,7 @@ class _Day84DatePickerState extends State<Day84DatePicker> {
             onTap: () async {
               // ! We can pick the date by [showDatePicker]....
 
-              DateTime selectedDate = await showDatePicker(
+              DateTime? selectedDate = await showDatePicker(
                 context: context, // ! need to pass the context....
                 initialDate: currentDate, // ! initial selected date...
                 firstDate:

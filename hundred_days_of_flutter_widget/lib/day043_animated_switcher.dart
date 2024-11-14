@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day43AnimatedSwitcher extends StatefulWidget {
-  Day43AnimatedSwitcher({Key key}) : super(key: key);
+  Day43AnimatedSwitcher({key}) : super(key: key);
 
   @override
   _Day43AnimatedSwitcherState createState() => _Day43AnimatedSwitcherState();

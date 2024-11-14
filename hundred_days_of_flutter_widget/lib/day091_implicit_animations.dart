@@ -128,7 +128,7 @@ class ExampleAnimatedAlign extends StatefulWidget {
 }
 
 class _ExampleAnimatedAlignState extends State<ExampleAnimatedAlign> {
-  bool repeat;
+ late bool repeat;
 
   @override
   void initState() {
@@ -159,7 +159,7 @@ class _ExampleAnimatedAlignState extends State<ExampleAnimatedAlign> {
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -211,7 +211,7 @@ class _ExampleAnimatedContainerState extends State<ExampleAnimatedContainer> {
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -266,7 +266,7 @@ class _ExampleAnimatedDefaultTextStyleState
               child: Text("AnimatedDefaultTextStyle"),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -313,7 +313,7 @@ class _ExampleAnimatedOpacityState extends State<ExampleAnimatedOpacity> {
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -360,7 +360,7 @@ class _ExampleAnimatedPaddingState extends State<ExampleAnimatedPadding> {
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -415,7 +415,7 @@ class _ExampleAnimatedPhysicalModelState
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -464,7 +464,7 @@ class _ExampleAnimatedPositionedState extends State<ExampleAnimatedPositioned> {
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -514,7 +514,7 @@ class _ExampleAnimatedPositionedDirectionalState
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -567,7 +567,7 @@ class _ExampleAnimatedCrossFadeState extends State<ExampleAnimatedCrossFade> {
               secondChild: Image.asset('images/logo.png'),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -606,13 +606,12 @@ class _ExampleAnimatedSizeState extends State<ExampleAnimatedSize>
           children: [
             AnimatedSize(
               duration: Duration(seconds: 1),
-              vsync: this,
               child: FlutterLogo(
                 size: repeat ? 10 : 250,
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {
@@ -692,7 +691,7 @@ class _ExampleAnimatedSwitcherState extends State<ExampleAnimatedSwitcher> {
               ),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text("Click Me!"),
                 onPressed: () {
                   setState(() {

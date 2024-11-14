@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day57Slider extends StatelessWidget {
-  const Day57Slider({Key key}) : super(key: key);
+  const Day57Slider({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class Day57Slider extends StatelessWidget {
 }
 
 class BodyPage extends StatefulWidget {
-  BodyPage({Key key}) : super(key: key);
+  BodyPage({ key}) : super(key: key);
 
   @override
   _BodyPageState createState() => _BodyPageState();
@@ -149,4 +149,8 @@ class _BodyPageState extends State<BodyPage> {
       ),
     );
   }
+}
+
+extension on ScaffoldState {
+  showSnackBar(SnackBar snackBar) {}
 }

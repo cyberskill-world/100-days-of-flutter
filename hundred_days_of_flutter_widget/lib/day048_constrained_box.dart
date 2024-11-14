@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day48ConstrainedBox extends StatelessWidget {
-  const Day48ConstrainedBox({Key key}) : super(key: key);
+  const Day48ConstrainedBox({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +44,12 @@ class Day48ConstrainedBox extends StatelessWidget {
         // ),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: RaisedButton(
-            color: Colors.deepOrange,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              textStyle: TextStyle(
+                color: Colors.deepOrange,
+              )
+            ),
             onPressed: () {},
             child: Text("Click"),
           ),

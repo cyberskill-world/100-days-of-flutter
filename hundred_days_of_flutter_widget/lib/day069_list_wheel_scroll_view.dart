@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day69ListWheelScrollView extends StatefulWidget {
-  Day69ListWheelScrollView({Key key}) : super(key: key);
+  Day69ListWheelScrollView({ key}) : super(key: key);
 
   @override
   _Day69ListWheelScrollViewState createState() =>

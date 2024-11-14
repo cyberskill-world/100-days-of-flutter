@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day38AspectRatio extends StatelessWidget {
-  const Day38AspectRatio({Key key}) : super(key: key);
+  const Day38AspectRatio({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class Day38AspectRatio extends StatelessWidget {
                       child: AspectRatio(
                         aspectRatio:
                             1, // ? here we give 1 as value so it is equal to split up like 1/1, 2/2, 3/3, 4/, ....
-                        child: Container(color: Theme.of(context).accentColor),
+                        child: Container(color: Theme.of(context).colorScheme.secondary),
                       ),
                     ),
                   ),

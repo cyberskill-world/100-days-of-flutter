@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day59AnimatedCrossFade extends StatefulWidget {
-  Day59AnimatedCrossFade({Key key}) : super(key: key);
+  Day59AnimatedCrossFade({key}) : super(key: key);
 
   @override
   _Day59AnimatedCrossFadeState createState() => _Day59AnimatedCrossFadeState();

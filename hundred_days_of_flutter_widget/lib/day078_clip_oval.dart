@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day78ClipOval extends StatelessWidget {
-  const Day78ClipOval({Key key}) : super(key: key);
+  const Day78ClipOval({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -8,8 +8,8 @@ class Day36AnimatedIcon extends StatefulWidget {
 
 class _Day36AnimatedIconState extends State<Day36AnimatedIcon>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation animIcon;
+  late AnimationController _controller;
+  late Animation<double> animIcon;
 
   @override
   void initState() {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day77CupertinoActivityIndicator extends StatefulWidget {
-  const Day77CupertinoActivityIndicator({Key key}) : super(key: key);
+  const Day77CupertinoActivityIndicator({ key}) : super(key: key);
 
   @override
   _Day77CupertinoActivityIndicatorState createState() =>
@@ -43,8 +43,12 @@ class _Day77CupertinoActivityIndicatorState
               radius: 50,
               animating: loader,
             ),
-            RaisedButton(
-              color: Theme.of(context).primaryColor,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                textStyle: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                )
+              ),
               onPressed: () {
                 setState(() {
                   loader = !loader;

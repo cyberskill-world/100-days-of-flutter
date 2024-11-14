@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hundreddaysofflutterwidget/day001_safearea.dart';
+import 'package:hundreddaysofflutterwidget/day001_safearea.solusion.dart';
 import 'package:hundreddaysofflutterwidget/day002_expanded.dart';
 import 'package:hundreddaysofflutterwidget/day003_wrap.dart';
 import 'package:hundreddaysofflutterwidget/day004_animation_container.dart';
@@ -128,7 +128,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MainPage extends StatefulWidget {
-  MainPage({Key key}) : super(key: key);
+  MainPage({key}) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -139,7 +139,7 @@ class _MainPageState extends State<MainPage> {
 
   Widget _appTitle = Text("100 Days of Widgets");
   Map nav = {
-    "SafeArea": Day1SafeArea(),
+    "SafeArea": Day1SafeAreaSolusion(),
     "Expanded": Day2Expanded(),
     "Wrap": Day3Wrap(),
     "AnimationContainer": Day4AnimationContainer(),
@@ -344,7 +344,7 @@ class _MainPageState extends State<MainPage> {
     "Web App for 100 Days of code"
   ];
 
-  List fliter = List<String>();
+  List<dynamic> fliter = [];
 
   @override
   Widget build(BuildContext context) {

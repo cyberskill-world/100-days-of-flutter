@@ -18,7 +18,7 @@ class Model2 {
 
 // ! here we create the InheritedModel same as the InheritedWidget with the key as string....
 class ModelInfo extends InheritedModel<String> {
-  ModelInfo({Key key, this.child, this.model1, this.model2})
+  ModelInfo({key,required this.child,required this.model1,required this.model2})
       : super(key: key, child: child);
 
   final Widget child;
@@ -26,7 +26,7 @@ class ModelInfo extends InheritedModel<String> {
   final Model1 model1;
   final Model2 model2;
 
-  static ModelInfo of(BuildContext context) {
+  static ModelInfo? of(BuildContext context) {
     return (context.dependOnInheritedWidgetOfExactType<ModelInfo>());
   }
 
@@ -55,7 +55,7 @@ class ModelInfo extends InheritedModel<String> {
 
 // * This is our root and calling Main Class of this file....
 class Day37InheritedModel extends StatelessWidget {
-  const Day37InheritedModel({Key key}) : super(key: key);
+  const Day37InheritedModel({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class Day37InheritedModel extends StatelessWidget {
 
 // so that this home page can access the root value....
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // ! by calling with the help of inheritFrom function as [aspect] "one"....
     final info =
-        InheritedModel.inheritFrom<ModelInfo>(context, aspect: "one").model1;
+        InheritedModel.inheritFrom<ModelInfo>(context, aspect: "one")?.model1;
 
     return Scaffold(
       appBar: AppBar(
@@ -109,12 +109,12 @@ class _HomePageState extends State<HomePage> {
         child: InkWell(
           onTap: () {
             setState(() {
-              info.color =
+              info?.color =
                   info.color == Colors.purple ? Colors.white : Colors.purple;
             });
           },
           child: Container(
-            color: info.color,
+            color: info?.color,
             child: Center(
               child: SubWidget(), // ! here we call the sub page....
             ),
@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
 
 // This sub page also can access the root value...
 class SubWidget extends StatefulWidget {
-  const SubWidget({Key key}) : super(key: key);
+  const SubWidget({key}) : super(key: key);
 
   @override
   _SubWidgetState createState() => _SubWidgetState();
@@ -138,19 +138,19 @@ class _SubWidgetState extends State<SubWidget> {
   Widget build(BuildContext context) {
     // ! by calling with the help of inheritFrom function as [aspect] "two"....
     final info =
-        InheritedModel.inheritFrom<ModelInfo>(context, aspect: "two").model2;
+        InheritedModel.inheritFrom<ModelInfo>(context, aspect: "two")?.model2;
 
     return InkWell(
       onTap: () {
         setState(() {
-          info.color =
+          info?.color =
               info.color == Colors.black ? Colors.yellow : Colors.black;
         });
       },
       child: Container(
         width: 100,
         height: 100,
-        color: info.color,
+        color: info?.color,
       ),
     );
   }

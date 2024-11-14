@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day23Transform extends StatefulWidget {
-  Day23Transform({Key key}) : super(key: key);
+  Day23Transform({key}) : super(key: key);
 
   @override
   _Day23TransformState createState() => _Day23TransformState();
 }
 
 class _Day23TransformState extends State<Day23Transform> {
-  double point;
-  Color _color;
+  late double point;
+  late Color _color;
 
   @override
   void initState() {

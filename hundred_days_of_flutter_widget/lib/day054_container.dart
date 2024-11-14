@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day54Container extends StatelessWidget {
-  const Day54Container({Key key}) : super(key: key);
+  const Day54Container({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

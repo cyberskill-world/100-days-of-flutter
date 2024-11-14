@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day70ShaderMask extends StatelessWidget {
-  const Day70ShaderMask({Key key}) : super(key: key);
+  const Day70ShaderMask({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

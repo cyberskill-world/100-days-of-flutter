@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day11SliverAppBar extends StatefulWidget {
-  Day11SliverAppBar({Key key}) : super(key: key);
+  Day11SliverAppBar({key}) : super(key: key);
 
   @override
   _Day11SliverAppBarState createState() => _Day11SliverAppBarState();
@@ -41,8 +41,8 @@ class _Day11SliverAppBarState extends State<Day11SliverAppBar> {
                  */
               backgroundColor:
                   Colors.green, // ! to provide the bg color for tha app bar....
-              brightness: Brightness
-                  .light, // ! to provide the [brightness] like dark or light....
+                  
+                   // ! to provide the [brightness] like dark or light....
               floating: true, // ! to make the appbar floating...
               elevation: 10.0, // ! to give cool shadow effect....
               expandedHeight: 150.0, // ! max expand or strech size....

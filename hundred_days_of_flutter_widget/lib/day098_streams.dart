@@ -6,14 +6,14 @@ import 'package:url_launcher/url_launcher.dart';
 enum Using { Transforming, AsyncAsteriskFunction, StreamController }
 
 class Day98Streams extends StatefulWidget {
-  Day98Streams({Key key}) : super(key: key);
+  Day98Streams({key}) : super(key: key);
 
   @override
   _Day98StreamsState createState() => _Day98StreamsState();
 }
 
 class _Day98StreamsState extends State<Day98Streams> {
-  Using using;
+  late Using using;
   @override
   void initState() {
     using = Using.Transforming;
@@ -52,7 +52,7 @@ class _Day98StreamsState extends State<Day98Streams> {
                         Colors.blue,
                         Colors.orange,
                         Colors.purple
-                      ][snapshot.data],
+                      ][snapshot.data!],
                       child: Center(
                         child: Text(
                           snapshot.data.toString(),
@@ -125,7 +125,7 @@ Stream<int> getStreamByStreamController() {
                 ][using.index],
                 Wrap(
                   children: [
-                    RaisedButton(
+                    ElevatedButton(
                       onPressed: () {
                         setState(() {
                           using = Using.Transforming;
@@ -133,7 +133,7 @@ Stream<int> getStreamByStreamController() {
                       },
                       child: Text('Stream using Transforming'),
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       onPressed: () {
                         setState(() {
                           using = Using.AsyncAsteriskFunction;
@@ -141,7 +141,7 @@ Stream<int> getStreamByStreamController() {
                       },
                       child: Text('Stream using async*'),
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       onPressed: () {
                         setState(() {
                           using = Using.StreamController;
@@ -191,8 +191,8 @@ Stream<int> getStreamByFuture() async* {
 }
 
 Stream<int> getStreamByStreamController() {
-  StreamController<int> controller;
-  Timer timer;
+  late StreamController<int> controller;
+  late Timer timer;
   int counter = 0;
 
   void tick(_) {
@@ -212,7 +212,7 @@ Stream<int> getStreamByStreamController() {
   void stopTimer() {
     if (timer != null) {
       timer.cancel();
-      timer = null;
+      timer = null!;
     }
   }
 

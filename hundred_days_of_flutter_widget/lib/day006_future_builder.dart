@@ -6,7 +6,7 @@ import 'dart:convert';
 import 'package:url_launcher/url_launcher.dart'; // ? I have used the inbuild convert of dart for json convertion....
 
 class Day6FutureBuilder extends StatefulWidget {
-  Day6FutureBuilder({Key key}) : super(key: key);
+  Day6FutureBuilder({ key}) : super(key: key);
 
   @override
   _Day6FutureBuilderState createState() => _Day6FutureBuilderState();
@@ -39,7 +39,7 @@ class _Day6FutureBuilderState extends State<Day6FutureBuilder> {
         child: FutureBuilder(
           // ? What is FutureBuilder....
           future: http.get(
-              "http://www.json-generator.com/api/json/get/cesFfSXQpu?indent=2"),
+              "http://www.json-generator.com/api/json/get/cesFfSXQpu?indent=2" as Uri),
           /**
            * ? [future] value store the real fetching data callback....
            * ! data in server....
@@ -60,7 +60,7 @@ class _Day6FutureBuilderState extends State<Day6FutureBuilder> {
             if (snapshot.connectionState == ConnectionState.done) {
               // ? here we check the connection....
               return Center(
-                child: Text(json.decode((snapshot.data.body))["text"]),
+                // child: Text(json.decode((snapshot.data.body))["text"]), 
                 /**
                  * ! here we decoed the data and get the value of [text] from the server.... 
                  */

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Day1SafeArea extends StatelessWidget {
-  const Day1SafeArea({
+class Day1SafeAreaSolusion extends StatelessWidget {
+  const Day1SafeAreaSolusion({
     key,
   }) : super(key: key);
 
@@ -10,7 +10,7 @@ class Day1SafeArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SafeArea"),
+        title: const Text("SafeeeeeeArea"),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.help),
@@ -45,7 +45,7 @@ class Day1SafeArea extends StatelessWidget {
                     child: Text(
                       index.toString(),
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 117, 24, 24),
                         fontWeight: FontWeight.bold,
                       ),
                     ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day19Tooltip extends StatefulWidget {
-  Day19Tooltip({Key key}) : super(key: key);
+  Day19Tooltip({key}) : super(key: key);
 
   @override
   _Day19TooltipState createState() => _Day19TooltipState();

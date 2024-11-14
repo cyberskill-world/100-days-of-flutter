@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day95Keys extends StatefulWidget {
-  Day95Keys({Key key}) : super(key: key);
+  Day95Keys({key}) : super(key: key);
 
   @override
   _Day95KeysState createState() => _Day95KeysState();
 }
 
 class _Day95KeysState extends State<Day95Keys> {
-  List<Widget> _tileWithKeys, _tileWithoutKeys;
+  late List<Widget> _tileWithKeys, _tileWithoutKeys;
 
-  bool _isKeys;
+  late bool _isKeys;
 
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _Day95KeysState extends State<Day95Keys> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: _isKeys ? _tileWithKeys : _tileWithoutKeys,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text(_isKeys ? 'Try Without Key' : 'Try With Key'),
               onPressed: () {
                 setState(() {
@@ -89,7 +89,7 @@ class _Day95KeysState extends State<Day95Keys> {
 }
 
 class StatefulColorTile extends StatefulWidget {
-  StatefulColorTile({Key key}) : super(key: key);
+  StatefulColorTile({ key}) : super(key: key);
 
   @override
   _StatefulColorTileState createState() => _StatefulColorTileState();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day66DefaultTabControllerAndTabBar extends StatefulWidget {
-  Day66DefaultTabControllerAndTabBar({Key key}) : super(key: key);
+  Day66DefaultTabControllerAndTabBar({ key}) : super(key: key);
 
   @override
   _Day66DefaultTabControllerAndTabBarState createState() =>

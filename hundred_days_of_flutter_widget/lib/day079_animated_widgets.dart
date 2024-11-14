@@ -14,11 +14,11 @@ class SpinTransition extends AnimatedWidget {
 
   /// ! we passes the animation controller to the listenable....
 
-  const SpinTransition({Key key, AnimationController controller})
+  const SpinTransition({ key, required AnimationController controller})
       : super(key: key, listenable: controller);
 
   Animation<double> get _progress =>
-      listenable; // ! added the AnimatedWidget->listenable to the _progress....
+      listenable as Animation<double>; // ! added the AnimatedWidget->listenable to the _progress....
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class Day79AnimatedWidget extends StatefulWidget {
 
 class _Day79AnimatedWidgetState extends State<Day79AnimatedWidget>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day89PanDrag extends StatefulWidget {
-  Day89PanDrag({Key key}) : super(key: key);
+  Day89PanDrag({key}) : super(key: key);
 
   @override
   _Day89PanDragState createState() => _Day89PanDragState();
 }
 
 class _Day89PanDragState extends State<Day89PanDrag> {
-  Offset _offset;
+  late Offset _offset;
 
-  String onPanDragText;
+  late String onPanDragText;
 
   @override
   void initState() {

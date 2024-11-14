@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day81CheckboxListTile extends StatefulWidget {
-  Day81CheckboxListTile({Key key}) : super(key: key);
+  Day81CheckboxListTile({ key}) : super(key: key);
 
   @override
   _Day81CheckboxListTileState createState() => _Day81CheckboxListTileState();
@@ -24,7 +24,7 @@ class _Day81CheckboxListTileState extends State<Day81CheckboxListTile> {
           onChanged: (value) {
             // and manage the state ad the [onChanged] callback....
             setState(() {
-              _isChecked = value;
+              _isChecked = value!;
             });
           },
           title: Text("Check Box!"), // ! here comes the title of [ListTile]....

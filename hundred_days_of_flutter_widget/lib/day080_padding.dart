@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day80Padding extends StatefulWidget {
-  const Day80Padding({Key key}) : super(key: key);
+  const Day80Padding({ key}) : super(key: key);
 
   @override
   _Day80PaddingState createState() => _Day80PaddingState();

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day74ProgressIndicator extends StatefulWidget {
-  Day74ProgressIndicator({Key key}) : super(key: key);
+  Day74ProgressIndicator({ key}) : super(key: key);
 
   @override
   _Day74ProgressIndicatorState createState() => _Day74ProgressIndicatorState();

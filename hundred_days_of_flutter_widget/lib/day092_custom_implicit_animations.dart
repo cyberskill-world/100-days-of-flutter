@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day92CustomImplicitAnimations extends StatefulWidget {
-  Day92CustomImplicitAnimations({Key key}) : super(key: key);
+  Day92CustomImplicitAnimations({key}) : super(key: key);
 
   @override
   _Day92CustomImplicitAnimationsState createState() =>
@@ -21,7 +21,7 @@ class _Day92CustomImplicitAnimationsState
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           // ! We can create the custom implicit animation for any widget with [TweenAnimationBuilder]....
-          TweenAnimationBuilder<Color>(
+          TweenAnimationBuilder<Color?>(
             duration: const Duration(seconds: 5),
             curve: Curves.elasticOut,
             tween: ColorTween(
@@ -36,17 +36,17 @@ class _Day92CustomImplicitAnimationsState
                 size: 250,
               ),
             ), // ! always try to add static widgets in [child] for the performance....
-            builder: (BuildContext context, Color valueColor, Widget child) =>
+            builder: (BuildContext context, Color? valueColor, Widget? child) =>
                 ColorFiltered(
               child: child,
-              colorFilter: ColorFilter.mode(valueColor, BlendMode.modulate),
+              colorFilter: ColorFilter.mode(valueColor ?? Colors.white, BlendMode.modulate),
             ),
           ),
           Slider.adaptive(
             value: _sliderValue,
             onChanged: (value) => setState(() {
               _sliderValue = value;
-              _newColor = Color.lerp(Colors.white, Colors.yellow, _sliderValue);
+              _newColor = Color.lerp(Colors.white, Colors.yellow, _sliderValue)!;
             }),
           ),
         ],

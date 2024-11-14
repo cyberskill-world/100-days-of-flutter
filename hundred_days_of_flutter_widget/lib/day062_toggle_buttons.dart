@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day62ToggleButtons extends StatefulWidget {
-  Day62ToggleButtons({Key key}) : super(key: key);
+  Day62ToggleButtons({ key}) : super(key: key);
 
   @override
   _Day62ToggleButtonsState createState() => _Day62ToggleButtonsState();

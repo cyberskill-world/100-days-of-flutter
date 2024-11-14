@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day65Image extends StatelessWidget {
-  const Day65Image({Key key}) : super(key: key);
+  const Day65Image({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,23 +32,23 @@ class Day65Image extends StatelessWidget {
                 ),
               ),
               Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.width / 2,
-                child: Center(
-                  // ! get image from the network file....
-                  child: Image.network(
-                    "https://www.emanprague.com/en/wp-content/uploads/2018/05/flutter_eman_blog.png",
-                    loadingBuilder: (context, child, loadingProgress) =>
-                        loadingProgress == null
-                            ? child
-                            : LinearProgressIndicator(
-                                value: loadingProgress.cumulativeBytesLoaded /
-                                        loadingProgress.expectedTotalBytes ??
-                                    0.1, // ! loader value get from the [loadingProgress]....
-                              ),
-                  ),
-                ),
-              ),
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.width / 2,
+                  child: Center(
+                    // ! get image from the network file....
+                    child: Image.network(
+                        "https://www.emanprague.com/en/wp-content/uploads/2018/05/flutter_eman_blog.png",
+                        loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      } else {
+                        return LinearProgressIndicator(
+                          value: loadingProgress.cumulativeBytesLoaded /
+                              (loadingProgress.expectedTotalBytes ?? 1),
+                        );
+                      }
+                    }),
+                  )),
             ],
           ),
         ),

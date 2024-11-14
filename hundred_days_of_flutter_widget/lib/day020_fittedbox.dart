@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day20FittedBox extends StatelessWidget {
-  const Day20FittedBox({Key key}) : super(key: key);
+  const Day20FittedBox({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

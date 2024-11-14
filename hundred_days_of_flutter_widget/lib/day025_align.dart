@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day25Align extends StatelessWidget {
-  const Day25Align({Key key}) : super(key: key);
+  const Day25Align({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

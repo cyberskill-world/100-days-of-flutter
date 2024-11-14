@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BodyPage extends StatelessWidget {
-  const BodyPage({Key key}) : super(key: key);
+  const BodyPage({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class BodyPage extends StatelessWidget {
 }
 
 class Day52ListView extends StatefulWidget {
-  Day52ListView({Key key}) : super(key: key);
+  Day52ListView({ key}) : super(key: key);
 
   @override
   _Day52ListViewState createState() => _Day52ListViewState();

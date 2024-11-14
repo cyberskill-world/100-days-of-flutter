@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day13FadeInImage extends StatefulWidget {
-  Day13FadeInImage({Key key}) : super(key: key);
+  Day13FadeInImage({ key}) : super(key: key);
 
   @override
   _Day13FadeInImageState createState() => _Day13FadeInImageState();

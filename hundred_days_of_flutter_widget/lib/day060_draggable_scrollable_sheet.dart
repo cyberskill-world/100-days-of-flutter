@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day60DraggableScrollableSheet extends StatefulWidget {
-  Day60DraggableScrollableSheet({Key key}) : super(key: key);
+  Day60DraggableScrollableSheet({ key}) : super(key: key);
 
   @override
   _Day60DraggableScrollableSheetState createState() =>

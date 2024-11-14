@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day71NotificationListener extends StatefulWidget {
-  Day71NotificationListener({Key key}) : super(key: key);
+  Day71NotificationListener({ key}) : super(key: key);
 
   @override
   _Day71NotificationListenerState createState() =>

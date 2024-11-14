@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day8FloatingActionButton extends StatefulWidget {
-  Day8FloatingActionButton({Key key}) : super(key: key);
+  Day8FloatingActionButton({key}) : super(key: key);
 
   @override
   _Day8FloatingActionButton createState() => _Day8FloatingActionButton();

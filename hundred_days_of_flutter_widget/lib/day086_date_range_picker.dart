@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day86DateRangePicker extends StatefulWidget {
-  Day86DateRangePicker({Key key}) : super(key: key);
+  Day86DateRangePicker({ key}) : super(key: key);
 
   @override
   _Day86DateRangePickerState createState() => _Day86DateRangePickerState();
@@ -20,7 +20,7 @@ class _Day86DateRangePickerState extends State<Day86DateRangePicker> {
           child: ListTile(
             onTap: () async {
               // ! We can pick the range of Dates by [showDateRangePicker]....
-              DateTimeRange seletedDateRange = await showDateRangePicker(
+              DateTimeRange? seletedDateRange = await showDateRangePicker(
                 context: context, // ! need to pass the context....
                 firstDate:
                     DateTime(1990, 1, 1), // ! boundary of dates from starts....

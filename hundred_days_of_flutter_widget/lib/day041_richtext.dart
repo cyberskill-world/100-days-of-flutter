@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day41RichText extends StatefulWidget {
-  const Day41RichText({Key key}) : super(key: key);
+  const Day41RichText({key}) : super(key: key);
 
   @override
   _Day41RichTextState createState() => _Day41RichTextState();

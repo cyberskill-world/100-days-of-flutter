@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day17Hero extends StatefulWidget {
-  Day17Hero({Key key}) : super(key: key);
+  Day17Hero({key}) : super(key: key);
 
   @override
   _Day17HeroState createState() => _Day17HeroState();
@@ -65,7 +65,7 @@ class _Day17HeroState extends State<Day17Hero> {
 }
 
 class NextPage extends StatefulWidget {
-  NextPage({Key key}) : super(key: key);
+  NextPage({key}) : super(key: key);
 
   @override
   _NextPageState createState() => _NextPageState();

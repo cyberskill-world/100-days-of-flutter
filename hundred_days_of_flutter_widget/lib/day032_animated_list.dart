@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day32AnimatedList extends StatefulWidget {
-  Day32AnimatedList({Key key}) : super(key: key);
+  Day32AnimatedList({key}) : super(key: key);
 
   @override
   _Day32AnimatedListState createState() => _Day32AnimatedListState();
@@ -85,8 +85,14 @@ class _Day32AnimatedListState extends State<Day32AnimatedList> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RaisedButton(
-                          color: Theme.of(context).primaryColor,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            textStyle: MaterialStateProperty.all<TextStyle>(
+                              TextStyle(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                          ),
                           onPressed: () {
                             setState(() {
                               family.add("Item at : ${family.length}");
@@ -94,8 +100,7 @@ class _Day32AnimatedListState extends State<Day32AnimatedList> {
                                * ! here we add the new item to the last index....
                                * ! and we set the state to reflect in the ui....
                                */
-                              _animList.currentState
-                                  .insertItem(family.length - 1);
+                              _animList.currentState?.insertItem(family.length - 1);
 
                               /**
                                    * ! so to perform animation in the list we can....
@@ -112,8 +117,14 @@ class _Day32AnimatedListState extends State<Day32AnimatedList> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RaisedButton(
-                          color: Theme.of(context).primaryColor,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            textStyle: MaterialStateProperty.all<TextStyle>(
+                              TextStyle(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                          ),
                           onPressed: () {
                             if (family.isNotEmpty) {
                               setState(() {
@@ -122,7 +133,7 @@ class _Day32AnimatedListState extends State<Day32AnimatedList> {
                                  * ! hence we store the last index from the list....
                                  */
                                 int index = family.length - 1;
-                                _animList.currentState.removeItem(
+                                _animList.currentState?.removeItem(
                                   /**
                                    * ! so to perform animation in the list we can....
                                    * ! we can get the current state from the key and remove the last item, with the help of [removeItem].... 

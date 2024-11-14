@@ -3,14 +3,14 @@ import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day9PageView extends StatefulWidget {
-  Day9PageView({Key key}) : super(key: key);
+  Day9PageView({key}) : super(key: key);
 
   @override
   _Day9PageViewState createState() => _Day9PageViewState();
 }
 
 class _Day9PageViewState extends State<Day9PageView> {
-  PageController _controller; // ? What is PageController....
+ late PageController _controller; // ? What is PageController....
 
   @override
   void initState() {

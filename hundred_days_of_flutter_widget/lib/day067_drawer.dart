@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day67Drawer extends StatefulWidget {
-  const Day67Drawer({Key key}) : super(key: key);
+  const Day67Drawer({ key}) : super(key: key);
 
   @override
   _Day67DrawerState createState() => _Day67DrawerState();
@@ -42,7 +42,7 @@ class _Day67DrawerState extends State<Day67Drawer> {
             icon: Icon(Icons.menu),
             onPressed: () {
               _scaffoldKey.currentState
-                  .openEndDrawer(); // ! Here we added the [openEndDrawer] from the [scaffold.state]....
+                  ?.openEndDrawer(); // ! Here we added the [openEndDrawer] from the [scaffold.state]....
             },
           )
         ],

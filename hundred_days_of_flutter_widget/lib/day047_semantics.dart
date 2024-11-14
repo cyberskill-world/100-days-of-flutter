@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day47Semantics extends StatelessWidget {
-  const Day47Semantics({Key key}) : super(key: key);
+  const Day47Semantics({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

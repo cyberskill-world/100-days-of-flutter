@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day64TweenAnimationBuilder extends StatefulWidget {
-  Day64TweenAnimationBuilder({Key key}) : super(key: key);
+  Day64TweenAnimationBuilder({ key}) : super(key: key);
 
   @override
   _Day64TweenAnimationBuilderState createState() =>
@@ -20,7 +20,7 @@ class _Day64TweenAnimationBuilderState
         /**
          * ! With the help of TweenAnimationBuilder we can create the custom animation effect to the user....
          */
-        child: TweenAnimationBuilder<Color>(
+        child: TweenAnimationBuilder<Color?>(
           tween: repeat
               ? ColorTween(begin: Colors.red, end: Colors.green)
               : ColorTween(

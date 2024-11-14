@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day72Builder extends StatefulWidget {
-  Day72Builder({Key key}) : super(key: key);
+  Day72Builder({ key}) : super(key: key);
 
   @override
   _Day72BuilderState createState() => _Day72BuilderState();
@@ -31,7 +31,7 @@ class _Day72BuilderState extends State<Day72Builder> {
                  */
                 child: Builder(
                   // ! here comes the Builder....
-                  builder: (BuildContext context) => RaisedButton(
+                  builder: (BuildContext context) => ElevatedButton(
                     // ! Which give ous the [builder] for get new [BuildContext]....
                     onPressed: () {
                       Scaffold.of(context).showSnackBar(
@@ -51,7 +51,7 @@ class _Day72BuilderState extends State<Day72Builder> {
             ),
             Container(
               child: Center(
-                child: RaisedButton(
+                child: ElevatedButton(
                   onPressed: () {
                     try {
                       Scaffold.of(context).showSnackBar(
@@ -94,4 +94,8 @@ class _Day72BuilderState extends State<Day72Builder> {
       ),
     );
   }
+}
+
+extension on ScaffoldState {
+  void showSnackBar(SnackBar snackBar) {}
 }

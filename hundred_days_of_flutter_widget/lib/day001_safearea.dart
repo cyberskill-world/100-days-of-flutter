@@ -3,7 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Day1SafeArea extends StatelessWidget {
   const Day1SafeArea({
-    Key key,
+    key,
   }) : super(key: key);
 
   @override

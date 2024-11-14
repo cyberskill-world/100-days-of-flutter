@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day87VerticalDrag extends StatefulWidget {
-  Day87VerticalDrag({Key key}) : super(key: key);
+  Day87VerticalDrag({ key}) : super(key: key);
 
   @override
   _Day87VerticalDragState createState() => _Day87VerticalDragState();
 }
 
 class _Day87VerticalDragState extends State<Day87VerticalDrag> {
-  Offset _offset;
-  String onVerticalDragText;
-  String isDragUpOrDown;
+  late Offset _offset;
+  late String onVerticalDragText;
+  late String isDragUpOrDown;
 
   @override
   void initState() {

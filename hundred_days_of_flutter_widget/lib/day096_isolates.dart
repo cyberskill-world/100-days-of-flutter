@@ -18,7 +18,7 @@ int fib(int n) {
 }
 
 class Day96Isolates extends StatefulWidget {
-  Day96Isolates({Key key}) : super(key: key);
+  Day96Isolates({key}) : super(key: key);
 
   @override
   _Day96IsolatesState createState() => _Day96IsolatesState();
@@ -40,7 +40,7 @@ class _Day96IsolatesState extends State<Day96Isolates> {
               style: TextStyle(fontSize: 25),
             ),
             StaticAnimation(), // Repeat and Continuous Animation....
-            RaisedButton(
+            ElevatedButton(
               child: Text('Find fibonacci numbers in Main Isolate'),
               onPressed: () {
                 int fib40 = fib(40); // ! call the fib as normal....
@@ -49,7 +49,7 @@ class _Day96IsolatesState extends State<Day96Isolates> {
                 });
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Find fibonacci numbers in Compute Isolate'),
               onPressed: () async {
                 int fib40 = await compute(
@@ -92,8 +92,8 @@ class StaticAnimation extends StatefulWidget {
 
 class _StaticAnimationState extends State<StaticAnimation>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation _rotationAnim;
+  late AnimationController _controller;
+  late Animation _rotationAnim;
 
   @override
   void initState() {
@@ -114,7 +114,7 @@ class _StaticAnimationState extends State<StaticAnimation>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
-      builder: (BuildContext context, Widget child) => Transform.rotate(
+      builder: (BuildContext context, Widget? child) => Transform.rotate(
         angle: _rotationAnim.value,
         child: Center(
           child: Container(

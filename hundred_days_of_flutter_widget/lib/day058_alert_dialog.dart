@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day58AlertDialog extends StatefulWidget {
-  Day58AlertDialog({Key key}) : super(key: key);
+  Day58AlertDialog({key}) : super(key: key);
 
   @override
   _Day58AlertDialogState createState() => _Day58AlertDialogState();
@@ -17,7 +17,7 @@ class _Day58AlertDialogState extends State<Day58AlertDialog> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 /**
                  * ? What is AlertDialog....
@@ -34,13 +34,13 @@ class _Day58AlertDialogState extends State<Day58AlertDialog> {
                         "Click OK/Back"), // ! had content display message.....
                     actions: <Widget>[
                       // ! here we had the action button....
-                      FlatButton(
+                      TextButton(
                           onPressed: () {
                             Navigator.pop(
                                 context); // ! to pop out the Dialog....
                           },
                           child: Text("OK")),
-                      FlatButton(
+                      TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
@@ -54,7 +54,7 @@ class _Day58AlertDialogState extends State<Day58AlertDialog> {
             SizedBox(
               height: 50,
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 showDialog(
                   context: context,

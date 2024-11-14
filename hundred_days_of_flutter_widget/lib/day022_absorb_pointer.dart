@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day22AbsorbPointer extends StatelessWidget {
-  const Day22AbsorbPointer({Key key}) : super(key: key);
+  const Day22AbsorbPointer({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class Day22AbsorbPointer extends StatelessWidget {
             // ? here the ListView have scroll event....
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
-                title: RaisedButton(
+                title: ElevatedButton(
                     // ? here the RaisedButton have click event....
                     child: Text("List item $index"),
                     onPressed: () {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day16ClipRRect extends StatelessWidget {
-  const Day16ClipRRect({Key key}) : super(key: key);
+  const Day16ClipRRect({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

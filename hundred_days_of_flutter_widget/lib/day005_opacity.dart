@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day5Opacity extends StatefulWidget {
-  Day5Opacity({Key key}) : super(key: key);
+  Day5Opacity({ key}) : super(key: key);
 
   @override
   _Day5OpacityState createState() => _Day5OpacityState();

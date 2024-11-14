@@ -114,7 +114,7 @@ class ExampleAlignTransition extends StatefulWidget {
 
 class _ExampleAlignTransitionState extends State<ExampleAlignTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
   static final AlignmentTween _alignmentTween =
       AlignmentTween(begin: Alignment.topLeft, end: Alignment.bottomRight);
 
@@ -168,7 +168,7 @@ class ExampleDecoratedBoxTransition extends StatefulWidget {
 class _ExampleDecoratedBoxTransitionState
     extends State<ExampleDecoratedBoxTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
   static final DecorationTween _decorationTween = DecorationTween(
     begin: BoxDecoration(
       gradient: LinearGradient(colors: [Colors.deepOrange, Colors.deepPurple]),
@@ -231,7 +231,7 @@ class ExampleDefaultTextStyleTransition extends StatefulWidget {
 class _ExampleDefaultTextStyleTransitionState
     extends State<ExampleDefaultTextStyleTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
   static final TextStyleTween _textStyleTween = TextStyleTween(
     begin: TextStyle(
       fontSize: 5,
@@ -298,7 +298,7 @@ class ExamplePositionedTransition extends StatefulWidget {
 class _ExamplePositionedTransitionState
     extends State<ExamplePositionedTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+ late AnimationController _controller;
   static final RelativeRectTween _relativeRectTween = RelativeRectTween(
     begin: RelativeRect.fill,
     end: RelativeRect.fromLTRB(50, 100, 50, 100),
@@ -355,7 +355,7 @@ class ExampleRotationTransition extends StatefulWidget {
 
 class _ExampleRotationTransitionState extends State<ExampleRotationTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -405,7 +405,7 @@ class ExampleScaleTransition extends StatefulWidget {
 
 class _ExampleScaleTransitionState extends State<ExampleScaleTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+ late AnimationController _controller;
 
   @override
   void initState() {
@@ -455,7 +455,7 @@ class ExampleSizeTransition extends StatefulWidget {
 
 class _ExampleSizeTransitionState extends State<ExampleSizeTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -506,7 +506,7 @@ class ExampleSlideTransition extends StatefulWidget {
 
 class _ExampleSlideTransitionState extends State<ExampleSlideTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+ late AnimationController _controller;
   static final Tween<Offset> _offsetTween = Tween(
     begin: Offset.zero,
     end: const Offset(-1, 0),
@@ -560,7 +560,7 @@ class ExampleFadeTransition extends StatefulWidget {
 
 class _ExampleFadeTransitionState extends State<ExampleFadeTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

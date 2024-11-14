@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day30ValueListenableBuilder extends StatefulWidget {
-  Day30ValueListenableBuilder({Key key}) : super(key: key);
+  Day30ValueListenableBuilder({key}) : super(key: key);
 
   @override
   _Day30ValueListenableBuilderState createState() =>
@@ -60,11 +60,11 @@ class _Day30ValueListenableBuilderState
                            * ! here we change the value from the notifier....
                            * ! it should update in all the places....
                            */
-                          RaisedButton(
+                          ElevatedButton(
                             onPressed: () => count.value += 1,
                             child: Text("Click to Increment"),
                           ),
-                          RaisedButton(
+                          ElevatedButton(
                             onPressed: () => count.value -= 1,
                             child: Text("Click to Decrement"),
                           )

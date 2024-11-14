@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day85TimePicker extends StatefulWidget {
-  Day85TimePicker({Key key}) : super(key: key);
+  Day85TimePicker({ key}) : super(key: key);
 
   @override
   _Day85TimePickerState createState() => _Day85TimePickerState();
@@ -19,7 +19,7 @@ class _Day85TimePickerState extends State<Day85TimePicker> {
           width: MediaQuery.of(context).size.width * 0.7,
           child: ListTile(
             onTap: () async {
-              TimeOfDay seletedTime = await showTimePicker(
+              TimeOfDay? seletedTime = await showTimePicker(
                 context: context, // ! need to pass the context....
                 initialTime: currentTime, // ! initial selected time...
               );

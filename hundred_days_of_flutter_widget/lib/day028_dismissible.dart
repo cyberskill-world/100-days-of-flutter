@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day28Dismissible extends StatefulWidget {
-  Day28Dismissible({Key key}) : super(key: key);
+  Day28Dismissible({key}) : super(key: key);
 
   @override
   _Day28DismissibleState createState() => _Day28DismissibleState();
@@ -116,4 +116,8 @@ class _Day28DismissibleState extends State<Day28Dismissible> {
       ),
     );
   }
+}
+
+extension on ScaffoldState {
+  showSnackBar(SnackBar snackBar) {}
 }

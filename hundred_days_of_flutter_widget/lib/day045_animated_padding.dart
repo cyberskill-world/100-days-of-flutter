@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day45AnimatedPadding extends StatefulWidget {
-  Day45AnimatedPadding({Key key}) : super(key: key);
+  Day45AnimatedPadding({key}) : super(key: key);
 
   @override
   _Day45AnimatedPaddingState createState() => _Day45AnimatedPaddingState();

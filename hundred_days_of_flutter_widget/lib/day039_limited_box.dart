@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day39LimitedBox extends StatelessWidget {
-  const Day39LimitedBox({Key key}) : super(key: key);
+  const Day39LimitedBox({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:hundreddaysofflutterwidget/day079_animated_widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day94CustomExplicitAnimations extends StatelessWidget {
-  const Day94CustomExplicitAnimations({Key key}) : super(key: key);
+  const Day94CustomExplicitAnimations({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

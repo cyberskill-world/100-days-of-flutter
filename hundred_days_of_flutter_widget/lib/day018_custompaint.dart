@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day18CustomPaint extends StatefulWidget {
-  Day18CustomPaint({Key key}) : super(key: key);
+  Day18CustomPaint({key}) : super(key: key);
 
   @override
   _Day18CustomPaintState createState() => _Day18CustomPaintState();

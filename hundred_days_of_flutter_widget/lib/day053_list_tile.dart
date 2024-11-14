@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BodyPage extends StatelessWidget {
-  const BodyPage({Key key}) : super(key: key);
+  const BodyPage({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class BodyPage extends StatelessWidget {
 }
 
 class Day53ListTile extends StatefulWidget {
-  Day53ListTile({Key key}) : super(key: key);
+  Day53ListTile({ key}) : super(key: key);
 
   @override
   _Day53ListTileState createState() => _Day53ListTileState();

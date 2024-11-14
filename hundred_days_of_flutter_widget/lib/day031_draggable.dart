@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day31Draggable extends StatefulWidget {
-  Day31Draggable({Key key}) : super(key: key);
+  Day31Draggable({key}) : super(key: key);
 
   @override
   _Day31DraggableState createState() => _Day31DraggableState();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day21LayoutBuilder extends StatelessWidget {
-  const Day21LayoutBuilder({Key key}) : super(key: key);
+  const Day21LayoutBuilder({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

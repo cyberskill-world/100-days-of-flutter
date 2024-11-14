@@ -5,9 +5,9 @@ import 'dart:async';
 
 // ! Model....
 class Employee {
-  int id;
+  int? id;
   String name;
-  Employee({this.id, this.name});
+  Employee({required this.id,required this.name});
 
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{
@@ -17,15 +17,14 @@ class Employee {
     return map;
   }
 
-  Employee.fromMap(Map<String, dynamic> map) {
-    id = map['id'];
-    name = map['name'];
-  }
+  Employee.fromMap(Map<String, dynamic> map) 
+    : id = map['id'] ?? 0,
+    name = map['name'] ?? '';
 }
 
 // ! Controller....
 class DBHelper {
-  static Database _database;
+  static late Database _database;
   static const String ID = 'id';
   static const String NAME = 'name';
   static const String TABLE = 'Employee';
@@ -58,7 +57,7 @@ class DBHelper {
 
   Future<List<Employee>> getEmployee() async {
     var dbClient = await database;
-    List<Map> maps = await dbClient.query(TABLE, columns: [ID, NAME]);
+    List<Map<String, dynamic>> maps = await dbClient.query(TABLE, columns: [ID, NAME]);
     // ! with the help of raw query....
     // List<Map> maps = await dbClient.rawQuery("SELECT * FROM $TABLE");
     List<Employee> employees = [];
@@ -89,7 +88,7 @@ class DBHelper {
 
 // ! View....
 class Day99LocalDataBaseWithSQLite extends StatefulWidget {
-  Day99LocalDataBaseWithSQLite({Key key}) : super(key: key);
+  Day99LocalDataBaseWithSQLite({ key}) : super(key: key);
 
   @override
   _Day99LocalDataBaseWithSQLiteState createState() =>
@@ -98,15 +97,15 @@ class Day99LocalDataBaseWithSQLite extends StatefulWidget {
 
 class _Day99LocalDataBaseWithSQLiteState
     extends State<Day99LocalDataBaseWithSQLite> {
-  Future<List<Employee>> employees;
+  late Future<List<Employee>> employees;
   TextEditingController controller = TextEditingController();
-  String name;
-  int curUserId;
+  late String name;
+  late int curUserId;
 
   final formKey = new GlobalKey<FormState>();
 
-  DBHelper dbHelper;
-  bool isUpdating;
+  late DBHelper dbHelper;
+  late bool isUpdating;
 
   @override
   void initState() {
@@ -136,18 +135,18 @@ class _Day99LocalDataBaseWithSQLiteState
               controller: controller,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(labelText: 'Name'),
-              validator: (value) => value.length == 0 ? 'Enter Name' : null,
-              onSaved: (newValue) => name = newValue,
+              validator: (value) => value?.length == 0 ? 'Enter Name' : null,
+              onSaved: (newValue) => name = newValue!,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  OutlineButton(
+                  TextButton(
                     onPressed: () {
-                      if (formKey.currentState.validate()) {
-                        formKey.currentState.save();
+                      if (formKey.currentState!.validate()) {
+                        formKey.currentState?.save();
                         if (isUpdating) {
                           Employee e = Employee(id: curUserId, name: name);
                           dbHelper.updateEmployee(e);
@@ -164,7 +163,7 @@ class _Day99LocalDataBaseWithSQLiteState
                     },
                     child: Text(isUpdating ? "Update" : "Add"),
                   ),
-                  OutlineButton(
+                  TextButton(
                     onPressed: () {
                       setState(() {
                         isUpdating = false;
@@ -195,7 +194,7 @@ class _Day99LocalDataBaseWithSQLiteState
                       onTap: () {
                         setState(() {
                           isUpdating = true;
-                          curUserId = employee.id;
+                          curUserId = employee.id!;
                         });
                         controller.text = employee.name;
                       },
@@ -203,7 +202,7 @@ class _Day99LocalDataBaseWithSQLiteState
                     DataCell(IconButton(
                       icon: Icon(Icons.delete),
                       onPressed: () {
-                        dbHelper.deleteEmployee(employee.id);
+                        dbHelper.deleteEmployee(employee.id!);
                         refreshList();
                       },
                     )),
@@ -214,13 +213,13 @@ class _Day99LocalDataBaseWithSQLiteState
 
   list() {
     return Expanded(
-        child: FutureBuilder(
+        child: FutureBuilder<List<Employee>>(
       future: employees,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return dataTable(snapshot.data);
+          return dataTable(snapshot.data!);
         }
-        if (snapshot.data == null || snapshot.data.length == 0) {
+        if (snapshot.data == null || snapshot.data?.length == 0) {
           return Text('No Data Found');
         }
         return CircularProgressIndicator();

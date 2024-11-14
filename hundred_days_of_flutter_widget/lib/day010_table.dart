@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day10Table extends StatefulWidget {
-  Day10Table({Key key}) : super(key: key);
+  Day10Table({ key}) : super(key: key);
 
   @override
   _Day10TableState createState() => _Day10TableState();
@@ -66,7 +66,7 @@ class _Day10TableState extends State<Day10Table> {
            * ! weather is it right-to-left or left-to-right....
            */
           border: TableBorder.all(
-            color: Colors.indigo[900],
+            color: Colors.indigo[900]!,
             width: 2.0,
           ),
           /**

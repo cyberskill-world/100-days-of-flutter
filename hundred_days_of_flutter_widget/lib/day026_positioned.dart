@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day26Positioned extends StatelessWidget {
-  const Day26Positioned({Key key}) : super(key: key);
+  const Day26Positioned({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

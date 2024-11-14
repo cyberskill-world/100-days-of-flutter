@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day83InteractiveViewer extends StatefulWidget {
-  Day83InteractiveViewer({Key key}) : super(key: key);
+  Day83InteractiveViewer({ key}) : super(key: key);
 
   @override
   _Day83InteractiveViewerState createState() => _Day83InteractiveViewerState();

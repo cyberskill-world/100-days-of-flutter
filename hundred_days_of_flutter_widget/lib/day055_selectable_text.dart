@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day55SelectableText extends StatelessWidget {
-  const Day55SelectableText({Key key}) : super(key: key);
+  const Day55SelectableText({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

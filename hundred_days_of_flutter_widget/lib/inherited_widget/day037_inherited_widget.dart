@@ -13,12 +13,12 @@ class Model {
 
 class ModelInfo extends InheritedWidget {
   // ! here we add the InheritedWidget....
-  ModelInfo({Key key, this.child, this.model}) : super(key: key, child: child);
+  ModelInfo({ key,required this.child,required this.model}) : super(key: key, child: child);
 
   final Widget child;
   final Model model; // ! Adding the value instance InheritedWidget....
 
-  static ModelInfo of(BuildContext context) {
+  static ModelInfo? of(BuildContext context) {
     return (context.dependOnInheritedWidgetOfExactType<ModelInfo>());
   }
 
@@ -29,7 +29,7 @@ class ModelInfo extends InheritedWidget {
 }
 
 class Day37InheritedWidget extends StatelessWidget {
-  const Day37InheritedWidget({Key key}) : super(key: key);
+  const Day37InheritedWidget({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class Day37InheritedWidget extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({ key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
           onTap: () {
             print("Click");
             setState(() {
-              ModelInfo.of(context).model.changeColor(); // ! here we change the color in statefull widget....
+              ModelInfo.of(context)?.model.changeColor(); // ! here we change the color in statefull widget....
             });
           },
           child: Container(
@@ -109,16 +109,16 @@ class _HomePageState extends State<HomePage> {
 }
 
 class SubWidget extends StatelessWidget {
-  const SubWidget({Key key}) : super(key: key);
+  const SubWidget({ key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final info = ModelInfo.of(context)
-        .model; // ! look here we get the root value from the of funtion of InheritedWidget....
+        ?.model; // ! look here we get the root value from the of funtion of InheritedWidget....
     return Container(
       width: 250,
       height: 250,
-      color: info.color, // ! with that we use the color....
+      color: info!.color, // ! with that we use the color....
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(

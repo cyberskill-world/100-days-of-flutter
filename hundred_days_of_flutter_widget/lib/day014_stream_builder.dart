@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day14StreamBuilder extends StatefulWidget {
-  Day14StreamBuilder({Key key}) : super(key: key);
+  Day14StreamBuilder({key}) : super(key: key);
 
   @override
   _Day14StreamBuilderState createState() => _Day14StreamBuilderState();

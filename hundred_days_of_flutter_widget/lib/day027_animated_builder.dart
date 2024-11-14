@@ -10,8 +10,8 @@ class Day27AnimatedBuilder extends StatefulWidget {
 
 class _Day27AnimatedBuilderState extends State<Day27AnimatedBuilder>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation _rotationAnim;
+  late AnimationController _controller;
+  late Animation<double> _rotationAnim;
 
   @override
   void initState() {
@@ -47,10 +47,9 @@ class _Day27AnimatedBuilderState extends State<Day27AnimatedBuilder>
        * this [builder] will funtion of two values that's (BuildContext context,Widget child)....
        * we needed to return the Ui whichc carry the animation value....
        */
-        builder: (BuildContext context, Widget child) => Transform.rotate(
-          angle: _rotationAnim.value, // ? here we give the Animation value...
+        builder: (BuildContext context, Widget? child) => Transform.rotate(
+          angle: _rotationAnim.value,
           child: Center(
-            // This animation effect is (A 250x250Container going to be rotate at center)....
             child: Container(
               width: 250,
               height: 250,

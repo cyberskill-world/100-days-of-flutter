@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Day33Flexible extends StatelessWidget {
-  const Day33Flexible({Key key}) : super(key: key);
+  const Day33Flexible({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
