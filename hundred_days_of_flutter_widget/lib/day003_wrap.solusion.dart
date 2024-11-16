@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Day3Wrap extends StatelessWidget {
-  const Day3Wrap({key}) : super(key: key);
+class Day3WrapSolusion extends StatelessWidget {
+  const Day3WrapSolusion({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

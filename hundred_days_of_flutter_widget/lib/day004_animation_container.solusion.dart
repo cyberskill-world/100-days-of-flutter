@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Day4AnimationContainer extends StatefulWidget {
-  Day4AnimationContainer({ key}) : super(key: key);
+class Day4AnimationContainerSolusion extends StatefulWidget {
+  Day4AnimationContainerSolusion({ key}) : super(key: key);
 
   @override
   _Day4AnimationContainerState createState() => _Day4AnimationContainerState();
 }
 
-class _Day4AnimationContainerState extends State<Day4AnimationContainer> {
+class _Day4AnimationContainerState extends State<Day4AnimationContainerSolusion> {
   var isClick = false;
 
   @override
