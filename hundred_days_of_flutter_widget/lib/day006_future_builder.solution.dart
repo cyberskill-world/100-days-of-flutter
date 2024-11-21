@@ -10,6 +10,33 @@ class Day6FutureBuilder extends StatefulWidget {
 }
 
 class _Day6FutureBuilderState extends State<Day6FutureBuilder> {
+  late Future<Map<String, dynamic>> _futureData;
+
+  @override
+  void initState() {
+    super.initState();
+    _futureData = fetchData();
+  }
+
+  // Phương thức lấy dữ liệu từ API
+  Future<Map<String, dynamic>> fetchData() async {
+    try {
+      final response = await http
+          .get(Uri.parse("https://api.genderize.io/?name=luc"))
+          .timeout(const Duration(seconds: 10)); // Đặt timeout
+      if (response.statusCode == 200) {
+        // Phân tích dữ liệu JSON
+        return json.decode(response.body) as Map<String, dynamic>;
+      } else {
+        throw Exception(
+            "Server returned an error: ${response.statusCode}"); // Lỗi server
+      }
+    } catch (e) {
+      // Xử lý lỗi kết nối hoặc thời gian chờ
+      throw Exception("Failed to load data: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,40 +44,51 @@ class _Day6FutureBuilderState extends State<Day6FutureBuilder> {
         title: Text("FutureBuilder"),
       ),
       body: SafeArea(
-        child: FutureBuilder<http.Response>( // đợi dữ liệu phản hồi và cập nhật lại UI
-          future: http.get(Uri.parse("https://api.genderize.io/?name=luc")),
-          initialData: null,
+        child: FutureBuilder<Map<String, dynamic>>(
+          future: _futureData,
           builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              if (snapshot.hasData && snapshot.data != null) {
-                final response = snapshot.data as http.Response;
-                final decodedData = json.decode(response.body);
-
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // Đang đợi dữ liệu
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    CircularProgressIndicator(),
+                    SizedBox(height: 16),
+                    Text("Loading data..."),
+                  ],
+                ),
+              );
+            } else if (snapshot.connectionState == ConnectionState.done) {
+              // Kết nối đã hoàn thành
+              if (snapshot.hasData) {
+                final data = snapshot.data!;
                 return Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Name: ${decodedData["name"]}"),
-                      Text("Gender: ${decodedData["gender"]}"),
-                      Text("Probability: ${decodedData["probability"]}"),
-                      Text("Count: ${decodedData["count"]}"),
+                      Text("Name: ${data["name"]}"),
+                      Text("Gender: ${data["gender"]}"),
+                      Text("Probability: ${data["probability"]}"),
+                      Text("Count: ${data["count"]}"),
                     ],
                   ),
                 );
+              } else if (snapshot.hasError) {
+                // Có lỗi
+                return Center(
+                  child: Text(
+                    "Error: ${snapshot.error}",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                );
               } else {
-                return Center(child: Text("No data available from the server."));
+                // Không có dữ liệu
+                return const Center(child: Text("No data available."));
               }
             } else {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    CircularProgressIndicator(),
-                    Text("Waiting for the Record...."),
-                    Text(snapshot.connectionState.toString())
-                  ],
-                ),
-              );
+              // Các trạng thái khác (không mong đợi)
+              return const Center(child: Text("Unexpected state."));
             }
           },
         ),
