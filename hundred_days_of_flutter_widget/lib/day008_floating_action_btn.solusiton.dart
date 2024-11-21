@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Day8FloatingActionButton extends StatefulWidget {
-  Day8FloatingActionButton({key}) : super(key: key);
+class Day8FloatingActionButtonSolusion extends StatefulWidget {
+  Day8FloatingActionButtonSolusion({key}) : super(key: key);
 
   @override
   _Day8FloatingActionButton createState() => _Day8FloatingActionButton();
 }
 
-class _Day8FloatingActionButton extends State<Day8FloatingActionButton> {
+class _Day8FloatingActionButton extends State<Day8FloatingActionButtonSolusion> {
   bool _color = true;
 
   @override
