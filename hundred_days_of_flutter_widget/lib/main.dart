@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hundreddaysofflutterwidget/day001_safearea.solusion.dart';
 import 'package:hundreddaysofflutterwidget/day002_expanded.dart';
+import 'package:hundreddaysofflutterwidget/day002_expanded.solusion.dart';
 import 'package:hundreddaysofflutterwidget/day003_wrap.dart';
+import 'package:hundreddaysofflutterwidget/day003_wrap.solusion.dart';
 import 'package:hundreddaysofflutterwidget/day004_animation_container.dart';
+import 'package:hundreddaysofflutterwidget/day004_animation_container.solusion.dart';
 import 'package:hundreddaysofflutterwidget/day005_opacity.dart';
 import 'package:hundreddaysofflutterwidget/day006_future_builder.dart';
 import 'package:hundreddaysofflutterwidget/day007_fade_transition.dart';
@@ -103,6 +106,13 @@ import 'package:hundreddaysofflutterwidget/inherited_widget/day037_inherited_wid
 import 'package:hundreddaysofflutterwidget/route/route.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'day005_opacity.solusion.dart';
+import 'day006_future_builder.solusion.dart';
+import 'day007_fade_transition.solusion.dart';
+import 'day008_floating_action_btn.solusiton.dart';
+import 'day009_page_view.solusion.dart';
+import 'day010_table.solusion.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -139,16 +149,16 @@ class _MainPageState extends State<MainPage> {
 
   Widget _appTitle = Text("100 Days of Widgets");
   Map nav = {
-    "SafeArea": Day1SafeAreaSolusion(),
-    "Expanded": Day2Expanded(),
-    "Wrap": Day3Wrap(),
-    "AnimationContainer": Day4AnimationContainer(),
-    "Opacity": Day5Opacity(),
-    "FutureBuilder": Day6FutureBuilder(),
-    "FadeTransition": Day7FadeTransition(),
-    "FloatingActionButton": Day8FloatingActionButton(),
-    "PageView": Day9PageView(),
-    "Table": Day10Table(),
+    "SafeAreaSolusion": Day1SafeAreaSolusion(),
+    "Expanded": Day2ExpandedSolusion(),
+    "Wrap": Day3WrapSolusion(),
+    "AnimationContainer": Day4AnimationContainerSolusion(),
+    "Opacity": Day5OpacitySolusion(),
+    "FutureBuilder": Day6FutureBuilderSolusion(),
+    "FadeTransition": Day7FadeTransitionSolusion(),
+    "FloatingActionButton": Day8FloatingActionButtonSolusion(),
+    "PageView": Day9PageViewSolusion(),
+    "Table": Day10TableSolusion(),
     "SliverAppBar": Day11SliverAppBar(),
     "SliverGridList": Day12SliverGridList(),
     "FadeInImage": Day13FadeInImage(),
@@ -242,7 +252,7 @@ class _MainPageState extends State<MainPage> {
   };
 
   List _listTitle = [
-    "SafeArea",
+    "SafeAreaSolusion",
     "Expanded",
     "Wrap",
     "AnimationContainer",
